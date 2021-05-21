@@ -7,5 +7,5 @@ public class University
 	private String name;
 	private int universityId;
 	private Address address;
-	private ArrayList<College> collgeList;
+	private ArrayList<College> collgeList;//mklkj
 }
