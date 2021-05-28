@@ -1,35 +1,24 @@
 package com.cg.oms.entity;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
 @Entity
-@Table(name = "branch")
-public class Branch 
-{
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "branch_id")
-	private int branchId;
-	@Column(name = "branch_name")
-	private String branchName;
-	@Column(name = "branch_description")
-	private String branchDescription;
-	public Branch() {
-		
-	}
+public class Branch {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int branchId;
+	private String branchName;
+	private String branchDescription;
 	public Branch(int branchId, String branchName, String branchDescription) {
 		super();
 		this.branchId = branchId;
 		this.branchName = branchName;
 		this.branchDescription = branchDescription;
 	}
-
 	public int getBranchId() {
 		return branchId;
 	}
@@ -48,7 +37,12 @@ public class Branch
 	public void setBranchDescription(String branchDescription) {
 		this.branchDescription = branchDescription;
 	}
+	@Override
+	public String toString() {
+		return "Branch [branchId=" + branchId + ", branchName=" + branchName + ", branchDescription="
+				+ branchDescription + "]";
+	}
+	
 	
 	
 }
-
